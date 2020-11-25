@@ -12,12 +12,12 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
     JTextField textField, textField1;
     JButton jButton;
     ImageIcon[] icons = new ImageIcon[]{
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\lab6\\img\\icon0.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\lab6\\img\\icon1.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\lab6\\img\\icon2.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\lab6\\img\\icon3.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\lab6\\img\\icon4.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\lab6\\img\\icon5.png"),
+            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon0.png"),
+            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon1.png"),
+            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon2.png"),
+            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon3.png"),
+            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon4.png"),
+            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon5.png"),
     };
 
     ProkerkaFrame() {
@@ -87,22 +87,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
         this.add(textField1);
         this.add(jButton);
 
-        cb1.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                // It's empty here...
-            }
-
+        cb1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 textField1.setText("Click on the first image");
@@ -114,22 +99,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
             }
         });
 
-        cb2.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                // It's empty here...
-            }
-
+        cb2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 textField1.setText("Press and then release the mouse on first image");
@@ -140,22 +110,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
                 textField1.setText("Hints are real!");
             }
         });
-        cb3.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                // It's empty here...
-            }
-
+        cb3.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 textField1.setText("Try to scroll over the second image");
@@ -167,22 +122,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
             }
         });
 
-        cb4.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                // It's empty here...
-            }
-
+        cb4.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 textField1.setText("Moved the cursor");
@@ -194,22 +134,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
             }
         });
 
-        cb5.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                // It's empty here...
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                // It's empty here...
-            }
-
+        cb5.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 textField1.setText("Enter and then exit the area with your cursor");
@@ -221,12 +146,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
             }
         });
 
-            jButton.addMouseListener(new MouseListener() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-
-                }
-
+            jButton.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
                     if(cb2.isSelected()){
@@ -236,23 +156,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
                         jButton.setText("You pressed me!");
                     }
                 }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-                    // It's empty here...
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    // It's empty here...
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    // It's empty here...
-                }
             });
-
     }
     
     @Override
@@ -313,6 +217,11 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
     }
 
     @Override
+    public void mouseDragged(MouseEvent e) {
+        // It's empty here...
+    }
+
+    @Override
     public void mouseMoved(MouseEvent e) {
         if(cb4.isSelected()){
             int x = e.getX();
@@ -321,10 +230,5 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
             labelstatus.setText("Move:("+x+", "+y+")");
             status.setText("You are moving!");
         }
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-        // It's empty here...
     }
 }
