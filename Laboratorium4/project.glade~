@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.2 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="Main">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Calculator</property>
+    <property name="default_width">500</property>
+    <property name="default_height">300</property>
+    <property name="icon_name">document-send-symbolic.symbolic</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="title" translatable="yes">Calculator COVID-19</property>
+        <property name="has_subtitle">False</property>
+        <property name="spacing">10</property>
+        <property name="show_close_button">True</property>
+        <child>
+          <object class="GtkSpinner">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="active">True</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="buttoncalc">
+            <property name="label" translatable="yes">Calculate</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="activate" handler="getResult" swapped="no"/>
+            <signal name="clicked" handler="getResult" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">416</property>
+            <property name="y">230</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="cont">
+            <property name="width_request">187</property>
+            <property name="height_request">18</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">Date of the contact</property>
+          </object>
+          <packing>
+            <property name="x">16</property>
+            <property name="y">65</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="symp">
+            <property name="width_request">187</property>
+            <property name="height_request">18</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">Date of first symptoms </property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">105</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="test">
+            <property name="width_request">187</property>
+            <property name="height_request">18</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">Date of COVID test</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">146</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="datenow">
+            <property name="width_request">187</property>
+            <property name="height_request">18</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">Current date</property>
+          </object>
+          <packing>
+            <property name="x">16</property>
+            <property name="y">25</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="ch1">
+            <property name="label" translatable="yes">Test positive</property>
+            <property name="width_request">100</property>
+            <property name="height_request">18</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="draw_indicator">True</property>
+          </object>
+          <packing>
+            <property name="x">211</property>
+            <property name="y">112</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="result">
+            <property name="width_request">500</property>
+            <property name="height_request">18</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="editable">False</property>
+            <property name="progress_pulse_step">1</property>
+            <property name="placeholder_text" translatable="yes">Result</property>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">187</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
