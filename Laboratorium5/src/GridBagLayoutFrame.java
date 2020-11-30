@@ -23,6 +23,7 @@ public class GridBagLayoutFrame extends JFrame {
         jTextFieldCenter.setHorizontalAlignment(SwingConstants.CENTER);
         jLabelLeft.setHorizontalAlignment(SwingConstants.CENTER);
         jLabelRight.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabelMenu1.setHorizontalAlignment(SwingConstants.CENTER);
 
         GridBagLayout gbl = new GridBagLayout();
         GridBagConstraints gcon = new GridBagConstraints();
@@ -59,9 +60,9 @@ public class GridBagLayoutFrame extends JFrame {
         gbl.setConstraints(jLabelRight1, gcon);
         add(jLabelRight1);
 
-        gcon.gridx = 2;
+        gcon.gridx = 0;
         gcon.gridy = 0;
-        gcon.gridwidth = 1;
+        gcon.gridwidth = 3;
         gcon.gridheight = 1;
         gbl.setConstraints(jLabelMenu1, gcon);
         add(jLabelMenu1);
@@ -82,7 +83,7 @@ public class GridBagLayoutFrame extends JFrame {
 
         gcon.gridx = 5;
         gcon.gridy = 0;
-        gcon.gridwidth = 1;
+        gcon.gridwidth = 3;
         gcon.gridheight = 1;
         gbl.setConstraints(jButtonMenu, gcon);
         add(jButtonMenu);
