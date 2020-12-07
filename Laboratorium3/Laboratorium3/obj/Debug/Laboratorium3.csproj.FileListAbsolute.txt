@@ -1,0 +1,14 @@
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.csprojAssemblyReference.cache
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\MainWindow.baml
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\MainWindow.g.cs
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\App.g.cs
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3_MarkupCompile.cache
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.g.resources
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.Properties.Resources.resources
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.csproj.GenerateResource.cache
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.csproj.CoreCompileInputs.cache
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\bin\Debug\Laboratorium3.exe.config
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\bin\Debug\Laboratorium3.exe
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\bin\Debug\Laboratorium3.pdb
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.exe
+D:\MyProjects\Rider\Laboratorium3\Laboratorium3\obj\Debug\Laboratorium3.pdb
