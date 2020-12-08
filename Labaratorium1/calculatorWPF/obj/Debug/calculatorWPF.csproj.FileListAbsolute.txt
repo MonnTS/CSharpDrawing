@@ -5,3 +5,10 @@ C:\Users\Daniel\source\repos\calculatorWPF\calculatorWPF\bin\Debug\calculatorWPF
 C:\Users\Daniel\source\repos\calculatorWPF\calculatorWPF\bin\Debug\calculatorWPF.pdb
 C:\Users\Daniel\source\repos\calculatorWPF\calculatorWPF\obj\Debug\calculatorWPF.exe
 C:\Users\Daniel\source\repos\calculatorWPF\calculatorWPF\obj\Debug\calculatorWPF.pdb
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\bin\Debug\calculatorWPF.exe.config
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\bin\Debug\calculatorWPF.exe
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\bin\Debug\calculatorWPF.pdb
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\obj\Debug\calculatorWPF.csprojAssemblyReference.cache
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\obj\Debug\calculatorWPF.csproj.CoreCompileInputs.cache
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\obj\Debug\calculatorWPF.exe
+D:\MyProjects\Rider\CSharpDrawing\Labaratorium1\calculatorWPF\obj\Debug\calculatorWPF.pdb
