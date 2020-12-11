@@ -5,7 +5,7 @@ namespace Laboratorium3
 {
     public partial class MainWindow
     {
-        public ObservableCollection<Person> PersonsList { get; set; }
+        public ObservableCollection<Person> PersonsList { get; }
         
         public MainWindow()
         {
