@@ -1,4 +1,4 @@
-## Tasks
+# Tasks
 1. Kliknięcie;
 2. Wciskanie | puszczanie przycisków myszy;
 3. Przewijanie (kłókiem);
