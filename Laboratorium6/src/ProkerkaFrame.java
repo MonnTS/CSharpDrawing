@@ -12,12 +12,12 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
     JTextField textField, textField1;
     JButton jButton;
     ImageIcon[] icons = new ImageIcon[]{
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon0.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon1.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon2.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon3.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon4.png"),
-            new ImageIcon("C:\\Users\\Daniel\\IdeaProjects\\Laboratorium6\\img\\icon5.png"),
+            new ImageIcon("\\..\\..\\IdeaProjects\\Laboratorium6\\img\\icon0.png"),
+            new ImageIcon("\\..\\..\\IdeaProjects\\Laboratorium6\\img\\icon1.png"),
+            new ImageIcon("\\..\\..\\IdeaProjects\\Laboratorium6\\img\\icon2.png"),
+            new ImageIcon("\\..\\..\\IdeaProjects\\Laboratorium6\\img\\icon3.png"),
+            new ImageIcon("\\..\\..\\IdeaProjects\\Laboratorium6\\img\\icon4.png"),
+            new ImageIcon("\\..\\..\\IdeaProjects\\Laboratorium6\\img\\icon5.png"),
     };
 
     ProkerkaFrame() {
@@ -169,7 +169,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // It's empty here...
+        // ignored
     }
 
     @Override
@@ -218,7 +218,7 @@ public class ProkerkaFrame extends JFrame implements MouseListener, MouseWheelLi
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        // It's empty here...
+        // ignored
     }
 
     @Override
