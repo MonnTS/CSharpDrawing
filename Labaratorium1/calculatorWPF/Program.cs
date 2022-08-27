@@ -2,15 +2,175 @@
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using Label = System.Windows.Forms.Label;
 
 namespace calculatorWPF
 {
     internal static class Program
     {
-        private partial class Form1 : Form
+        [STAThread]
+        private static void Main()
         {
-            #region declareButtons
+            Application.EnableVisualStyles();
+            Application.Run(new MainWindow());
+        }
+
+        private sealed class MainWindow : Form
+        {
+            private TextBox _textBox;
+
+            public MainWindow()
+            {
+                InitialComponents();
+                _textBox1.GotFocus += OnGetFocused;
+                _textBox2.GotFocus += OnGetFocused;
+            }
+
+            private void OnGetFocused(object sender, EventArgs e)
+            {
+                _textBox = sender as TextBox;
+            }
+
+            private void InitialComponents()
+            {
+                _button1 = new Button();
+                _button1.AutoSize = true;
+                _button1.Location = new Point(30, 180);
+                _button1.Text = "+";
+                Controls.Add(_button1);
+                _button1.Click += btn_Sum;
+
+                _button2 = new Button();
+                _button2.AutoSize = true;
+                _button2.Location = new Point(110, 180);
+                _button2.Text = "-";
+                Controls.Add(_button2);
+                _button2.Click += btn_Subtraction;
+
+                _button3 = new Button();
+                _button3.AutoSize = true;
+                _button3.Location = new Point(110, 210);
+                _button3.Text = "/";
+                Controls.Add(_button3);
+                _button3.Click += btn_Division;
+
+                _button4 = new Button();
+                _button4.AutoSize = true;
+                _button4.Location = new Point(30, 210);
+                _button4.Text = "*";
+                Controls.Add(_button4);
+                _button4.Click += btn_Multiplication;
+
+                _button5 = new Button();
+                _button5.AutoSize = true;
+                _button5.Location = new Point(190, 210);
+                _button5.Text = "C";
+                Controls.Add(_button5);
+                _button5.Click += btn_Clear;
+
+                _number0 = new Button();
+                _number0.AutoSize = true;
+                _number0.Location = new Point(190, 180);
+                _number0.Text = "0";
+                Controls.Add(_number0);
+                _number0.Click += number0_Click;
+
+                _number1 = new Button();
+                _number1.AutoSize = true;
+                _number1.Location = new Point(30, 150);
+                _number1.Text = "1";
+                Controls.Add(_number1);
+                _number1.Click += number1_Click;
+
+                _number2 = new Button();
+                _number2.AutoSize = true;
+                _number2.Location = new Point(110, 150);
+                _number2.Text = "2";
+                Controls.Add(_number2);
+                _number2.Click += number2_Click;
+
+                _number3 = new Button();
+                _number3.AutoSize = true;
+                _number3.Location = new Point(190, 150);
+                _number3.Text = "3";
+                Controls.Add(_number3);
+                _number3.Click += number3_Click;
+
+                _number4 = new Button();
+                _number4.AutoSize = true;
+                _number4.Location = new Point(30, 120);
+                _number4.Text = "4";
+                Controls.Add(_number4);
+                _number4.Click += number4_Click;
+
+                _number5 = new Button();
+                _number5.AutoSize = true;
+                _number5.Location = new Point(110, 120);
+                _number5.Text = "5";
+                Controls.Add(_number5);
+                _number5.Click += number5_Click;
+
+                _number6 = new Button();
+                _number6.AutoSize = true;
+                _number6.Location = new Point(190, 120);
+                _number6.Text = "6";
+                Controls.Add(_number6);
+                _number6.Click += number6_Click;
+
+                _number7 = new Button();
+                _number7.AutoSize = true;
+                _number7.Location = new Point(30, 90);
+                _number7.Text = "7";
+                Controls.Add(_number7);
+                _number7.Click += number7_Click;
+
+                _number8 = new Button();
+                _number8.AutoSize = true;
+                _number8.Location = new Point(110, 90);
+                _number8.Text = "8";
+                Controls.Add(_number8);
+                _number8.Click += number8_Click;
+
+                _number9 = new Button();
+                _number9.AutoSize = true;
+                _number9.Location = new Point(190, 90);
+                _number9.Text = "9";
+                Controls.Add(_number9);
+                _number9.Click += number9_Click;
+
+                _dot = new Button();
+                _dot.AutoSize = true;
+                _dot.Location = new Point(110, 240);
+                _dot.Text = ".";
+                Controls.Add(_dot);
+                _dot.Click += dot_Click;
+
+                _textBox1 = new TextBox();
+                _textBox1.Size = new Size(70, 70);
+                _textBox1.Location = new Point(30, 30);
+                Controls.Add(_textBox1);
+
+                _textBox2 = new TextBox();
+                _textBox2.Size = new Size(70, 70);
+                _textBox2.Location = new Point(115, 30);
+                Controls.Add(_textBox2);
+
+                _textBox3 = new TextBox();
+                _textBox3.Size = new Size(70, 70);
+                _textBox3.Location = new Point(200, 30);
+                Controls.Add(_textBox3);
+
+                _label1 = new Label();
+                _label1.AutoSize = true;
+                _label1.Location = new Point(103, 32);
+                _label1.Text = "";
+                Controls.Add(_label1);
+
+                _label2 = new Label();
+                _label2.AutoSize = true;
+                _label2.Location = new Point(186, 32);
+                _label2.Text = "=";
+                Controls.Add(_label2);
+            }
 
             private Button _button1;
             private Button _button2;
@@ -30,291 +190,79 @@ namespace calculatorWPF
             private Button _number0;
             private Button _dot;
 
-            #endregion declareButtons
-
-            #region declareTextBoxes
-
             private TextBox _textBox1;
             private TextBox _textBox2;
             private TextBox _textBox3;
 
-            #endregion declareTextBoxes
-
-            #region labels
-
             private Label _label1;
             private Label _label2;
-
-            #endregion labels
-
-            private TextBox _textBox;
-
-            private void GetF(object sender, EventArgs e)
+            
+            private void btn_Sum(object sender, EventArgs e)
             {
-                _textBox = sender as TextBox;
-            }
-
-            public Form1()
-            {
-                InstalizationComponents();
-                this._textBox1.GotFocus += GetF;
-                this._textBox2.GotFocus += GetF;
-            }
-
-            private void InstalizationComponents()
-            {
-                #region buttons
-
-                _button1 = new Button();
-                this._button1.AutoSize = true;
-                this._button1.Location = new Point(30, 180);
-                this._button1.Text = "+";
-                this.Controls.Add(_button1);
-                this._button1.Click += button1_Click;
-
-                _button2 = new Button();
-                this._button2.AutoSize = true;
-                this._button2.Location = new Point(110, 180);
-                this._button2.Text = "-";
-                this.Controls.Add(_button2);
-                this._button2.Click += button2_Click;
-
-                _button3 = new Button();
-                this._button3.AutoSize = true;
-                this._button3.Location = new Point(110, 210);
-                this._button3.Text = "/";
-                this.Controls.Add(_button3);
-                this._button3.Click += button3_Click;
-
-                _button4 = new Button();
-                this._button4.AutoSize = true;
-                this._button4.Location = new Point(30, 210);
-                this._button4.Text = "*";
-                this.Controls.Add(_button4);
-                this._button4.Click += button4_Click;
-
-                _button5 = new Button();
-                this._button5.AutoSize = true;
-                this._button5.Location = new Point(190, 210);
-                this._button5.Text = "C";
-                this.Controls.Add(_button5);
-                this._button5.Click += button5_Click;
-
-                _number0 = new Button();
-                this._number0.AutoSize = true;
-                this._number0.Location = new Point(190, 180);
-                this._number0.Text = "0";
-                this.Controls.Add(_number0);
-                this._number0.Click += number0_Click;
-
-                _number1 = new Button();
-                this._number1.AutoSize = true;
-                this._number1.Location = new Point(30, 150);
-                this._number1.Text = "1";
-                this.Controls.Add(_number1);
-                this._number1.Click += number1_Click;
-
-                _number2 = new Button();
-                this._number2.AutoSize = true;
-                this._number2.Location = new Point(110, 150);
-                this._number2.Text = "2";
-                this.Controls.Add(_number2);
-                this._number2.Click += number2_Click;
-
-                _number3 = new Button();
-                this._number3.AutoSize = true;
-                this._number3.Location = new Point(190, 150);
-                this._number3.Text = "3";
-                this.Controls.Add(_number3);
-                this._number3.Click += number3_Click;
-
-                _number4 = new Button();
-                this._number4.AutoSize = true;
-                this._number4.Location = new Point(30, 120);
-                this._number4.Text = "4";
-                this.Controls.Add(_number4);
-                this._number4.Click += number4_Click;
-
-                _number5 = new Button();
-                this._number5.AutoSize = true;
-                this._number5.Location = new Point(110, 120);
-                this._number5.Text = "5";
-                this.Controls.Add(_number5);
-                this._number5.Click += number5_Click;
-
-                _number6 = new Button();
-                this._number6.AutoSize = true;
-                this._number6.Location = new Point(190, 120);
-                this._number6.Text = "6";
-                this.Controls.Add(_number6);
-                this._number6.Click += number6_Click;
-
-                _number7 = new Button();
-                this._number7.AutoSize = true;
-                this._number7.Location = new Point(30, 90);
-                this._number7.Text = "7";
-                this.Controls.Add(_number7);
-                this._number7.Click += number7_Click;
-
-                _number8 = new Button();
-                this._number8.AutoSize = true;
-                this._number8.Location = new Point(110, 90);
-                this._number8.Text = "8";
-                this.Controls.Add(_number8);
-                this._number8.Click += number8_Click;
-
-                _number9 = new Button();
-                this._number9.AutoSize = true;
-                this._number9.Location = new Point(190, 90);
-                this._number9.Text = "9";
-                this.Controls.Add(_number9);
-                this._number9.Click += number9_Click;
-
-                _dot = new Button();
-                this._dot.AutoSize = true;
-                this._dot.Location = new Point(110, 240);
-                this._dot.Text = ".";
-                this.Controls.Add(_dot);
-                this._dot.Click += dot_Click;
-
-                #endregion buttons
-
-                #region textboxes
-
-                _textBox1 = new TextBox();
-                this._textBox1.Size = new Size(70, 70);
-                this._textBox1.Location = new Point(30, 30);
-                this.Controls.Add(_textBox1);
-
-                _textBox2 = new TextBox();
-                this._textBox2.Size = new Size(70, 70);
-                this._textBox2.Location = new Point(115, 30);
-                this.Controls.Add(_textBox2);
-
-                _textBox3 = new TextBox();
-                this._textBox3.Size = new Size(70, 70);
-                this._textBox3.Location = new Point(200, 30);
-                this.Controls.Add(_textBox3);
-
-                #endregion textboxes
-
-                #region labels
-
-                _label1 = new Label();
-                this._label1.AutoSize = true;
-                this._label1.Location = new Point(103, 32);
-                this._label1.Text = "";
-                this.Controls.Add(_label1);
-
-                _label2 = new Label();
-                this._label2.AutoSize = true;
-                this._label2.Location = new Point(186, 32);
-                this._label2.Text = "=";
-                this.Controls.Add(_label2);
-
-                #endregion labels
-            }
-
-            #region button_Click
-
-            private void button1_Click(object sender, EventArgs e)
-            {
-                try
+                if (_textBox1.Text != null && _textBox2.Text != null)
                 {
-                    if (_textBox1.Text != null && _textBox2.Text != null)
-                    {
-                        _label1.Text = "+";
-                        var i = float.Parse(_textBox1.Text);
-                        var n = float.Parse(_textBox2.Text);
-                        var r = n + i;
+                    _label1.Text = "+";
+                    var firstNumber = float.Parse(_textBox1.Text);
+                    var secondNumber = float.Parse(_textBox2.Text);
+                    var result = secondNumber + firstNumber;
 
-                        _textBox3.Text = r.ToString(CultureInfo.InvariantCulture);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Something bad happened: " + ex.Message, "Exception Sample", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _textBox3.Text = result.ToString();
                 }
             }
 
-            private void button2_Click(object sender, EventArgs e)
+            private void btn_Subtraction(object sender, EventArgs e)
             {
-                try
+                if (_textBox1.Text != null && _textBox2.Text != null)
                 {
-                    if (_textBox1.Text != null && _textBox2.Text != null)
-                    {
-                        _label1.Text = "-";
-                        var i = float.Parse(_textBox1.Text);
-                        var n = float.Parse(_textBox2.Text);
-                        var r = n - i;
+                    _label1.Text = "-";
+                    var firstNumber = float.Parse(_textBox1.Text);
+                    var secondNumber = float.Parse(_textBox2.Text);
+                    var result = secondNumber - firstNumber;
 
-                        _textBox3.Text = r.ToString(CultureInfo.CurrentCulture);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Something bad happened: " + ex.Message, "Exception Sample", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _textBox3.Text = result.ToString(CultureInfo.CurrentCulture);
                 }
             }
 
-            private void button3_Click(object sender, EventArgs e)
+            private void btn_Division(object sender, EventArgs e)
             {
-                try
+                if (_textBox1.Text != null && _textBox2.Text != null)
                 {
-                    if (_textBox1.Text == null || _textBox2.Text == null) return;
                     _label1.Text = "/";
-                    var i = float.Parse(_textBox1.Text);
-                    var n = float.Parse(_textBox2.Text);
+                    var firstNumber = float.Parse(_textBox1.Text);
+                    var secondNumber = float.Parse(_textBox2.Text);
 
-                    if (n == 0)
+                    if (secondNumber == 0)
                     {
-                        const string message = "Cannot divide by 0";
-                        const string tittle = "Error Message";
-                        MessageBox.Show(message, tittle);
+                        MessageBox.Show("Cannot divide by zero!", "Error", MessageBoxButtons.OK, 
+                            MessageBoxIcon.Error);
+                        return;
                     }
-                    else
-                    {
-                        var r = (n / i);
-                        _textBox3.Text = r.ToString(CultureInfo.CurrentCulture);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Something bad happened: " + ex.Message, "Exception Sample", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
+                    var result = secondNumber / firstNumber;
+                    _textBox3.Text = result.ToString();
                 }
             }
 
-            private void button4_Click(object sender, EventArgs e)
+            private void btn_Multiplication(object sender, EventArgs e)
             {
-                try
+                if (_textBox1.Text != null && _textBox3.Text != null)
                 {
-                    if (_textBox1.Text != null && _textBox3.Text != null)
-                    {
-                        _label1.Text = "*";
-                        var i = float.Parse(_textBox1.Text);
-                        var n = float.Parse(_textBox2.Text);
-                        var r = (n * i);
+                    _label1.Text = "*";
+                    var firstNumber = float.Parse(_textBox1.Text);
+                    var secondNumber = float.Parse(_textBox2.Text);
+                    var result = firstNumber * secondNumber;
 
-                        _textBox3.Text = r.ToString(CultureInfo.CurrentCulture);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Something bad happened: " + ex.Message, "Exception Sample", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    _textBox3.Text = result.ToString(CultureInfo.InvariantCulture);
                 }
             }
 
-            private void button5_Click(object sender, EventArgs e)
+            private void btn_Clear(object sender, EventArgs e)
             {
                 _textBox1.Clear();
                 _textBox2.Clear();
                 _textBox3.Clear();
                 _label1.Text = "";
             }
-
-            #endregion button_Click
-
-            #region number_Click
 
             private void number0_Click(object sender, EventArgs e)
             {
@@ -370,15 +318,6 @@ namespace calculatorWPF
             {
                 if (_textBox != null) _textBox.SelectedText += ".";
             }
-
-            #endregion number_Click
-        }
-
-        [STAThread]
-        private static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.Run(new Form1());
         }
     }
 }
