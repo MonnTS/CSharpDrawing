@@ -20,11 +20,13 @@ namespace Laboratorium3
             person = new Person("Joe", "Scranton", "1942.11.20");
             PersonsList.Add(person);
         }
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             var newPerson = new Person(txtname.Text, txtcity.Text, txtdate.Text);
             PersonsList.Add(newPerson);
         }
+
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             if (MyListView.SelectedItem != null)
